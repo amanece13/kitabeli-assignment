@@ -1,7 +1,9 @@
-package com.kitabeli.application.model;
+package com.kitabeli.application.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -10,11 +12,13 @@ import java.sql.Timestamp;
 @Builder
 @Entity(name = "deals")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Deal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="ID")
+    @Column(name="id")
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL)

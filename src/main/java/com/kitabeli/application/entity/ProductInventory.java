@@ -1,7 +1,9 @@
-package com.kitabeli.application.model;
+package com.kitabeli.application.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -9,23 +11,22 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Builder
-@Entity(name = "product_category")
+@Entity(name = "product_inventory")
 @Data
-public class ProductCategory {
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProductInventory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="ID")
+    @Column(name="id")
     private Long id;
 
-    @OneToOne(mappedBy = "productCategory")
+    @OneToOne(mappedBy = "productInventory")
     private Product product;
 
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "description")
-    private String description;
+    @Column(name = "quantity")
+    private Integer quantity;
 
     @Column(name = "created_at")
     @CreationTimestamp
@@ -37,5 +38,5 @@ public class ProductCategory {
 
     @Column(name = "deleted_at")
     private Timestamp deleted_at;
-
 }
+
