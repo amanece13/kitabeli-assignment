@@ -116,7 +116,7 @@ public class DealsServiceImpl implements DealsService {
     }
 
     private List<DealModel> processDiscount(List<Product> products) {
-        List<Product> shuffledList = pickNRandom(products, 2);
+        List<Product> shuffledList = pickNRandom(products, dealsConfig.getMinDeals());
 
 
         //filter list items with inventory more than 0
