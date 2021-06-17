@@ -27,8 +27,8 @@ public class ProductCategory {
     private String description;
 
     @Column(name = "created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name = "modified_at")
-    private Timestamp modified_at;
+    private Timestamp modifiedAt;
 }

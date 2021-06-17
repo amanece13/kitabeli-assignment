@@ -5,6 +5,10 @@
 * Extra functionalities for fetching all products or products with ids have been given.
 * We have attached the database diagram
 
+#Prerequisite to run
+* Java >= 1.8
+* Maven >= 3.6
+
 #How to run
 * Compile the application and run it.
 * Sample datasets have been provided along with the application to intialize the database

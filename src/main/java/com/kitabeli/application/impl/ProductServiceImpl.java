@@ -59,7 +59,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void addProduct(ProductModel productModel) {
+    public boolean addProduct(ProductModel productModel) {
 
         String checkValidity = InputValidator.validate(productModel);
         if(!checkValidity.isEmpty()){
@@ -90,6 +90,7 @@ public class ProductServiceImpl implements ProductService {
         }
         productRepository.save(product);
         log.info("Saved the product received {}", productModel);
+        return true;
     }
 
     @Override

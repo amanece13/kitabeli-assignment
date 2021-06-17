@@ -21,10 +21,10 @@ public class ProductInventory {
     private Integer quantity;
 
     @Column(name = "created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name = "modified_at")
-    private Timestamp modified_at;
+    private Timestamp modifiedAt;
 
 }
 

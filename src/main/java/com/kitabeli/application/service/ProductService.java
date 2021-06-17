@@ -13,7 +13,7 @@ public interface ProductService {
 
     public void addProducts(List<ProductModel> productList);
 
-    public void addProduct(ProductModel product);
+    public boolean addProduct(ProductModel product);
 
     public void removeProduct(Long productId);
 }
