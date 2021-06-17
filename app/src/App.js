@@ -47,7 +47,7 @@ function App() {
             <th>Discount</th>
             <th>Discount</th>
           </tr>
-          {results?.length ? results.map((item, index) => {
+          {results.length ? results.map((item, index) => {
             return (
               <Fragment>
                 <tr key={index}>
@@ -60,7 +60,7 @@ function App() {
             )
           }) : null}
 
-          {!results.length  && <p style="text-align: center">No Deals</p>}
+          {!results.length  && <p style={{textAlign: "center"}}>No Deals</p>}
           </tbody>
       </table>
       <button onClick={() => handleApiCall()}>Refresh</button>
