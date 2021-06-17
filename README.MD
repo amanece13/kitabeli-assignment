@@ -16,3 +16,103 @@
 * Upon opening the above url please use jdbc:h2:mem:dealsdb;DB_CLOSE_DELAY=-1 in the textarea of JDBC URL
   and press Connect
 * Navigate to /app and run run command npm i and then npm start
+
+#API Details
+
+GET APIs
+Fetch active deals - http://localhost:8080/active/deals
+Fetch expired deals - http://localhost:8080/expired/deals
+Manually refresh deals - http://localhost:8080/refresh/deals
+Fetch all product - http://localhost:8080/products
+Fetch product by id - http://localhost:8080/product/{id}
+
+
+
+POST APIs
+Add product - 
+http://localhost:8080/product
+
+sample json
+    
+    {
+		"name": "Reebok Men Shoe",
+		"description": "Reebok Sneakers",
+		"category_id": 4,
+		"inventory_id": 4,
+		"price": 20100.0,
+		"created_at": 1623912171
+    } 
+
+Add multiple products - 
+http://localhost:8080/products
+
+sample json
+
+    [
+    	
+    	{
+    		"name": "Adidas Men Shoe",
+    		"description": "Adidas men bravatta",
+    		"category_id": 1,
+    		"inventory_id": 1,
+    		"price": 2000.0,
+    		"created_at": 1623912171
+    	},
+    	{
+    		"name": "Nike Men Shoe",
+    		"description": "nike men bravatta",
+    		"category_id": 2,
+    		"inventory_id": 2,
+    		"price": 2000.0,
+    		"created_at": 1623912171
+    	},
+    	{
+    		"name": "Puma Men Shoe",
+    		"description": "puma men bravatta",
+    		"category_id": 3,
+    		"inventory_id": 3,
+    		"price": 2000.0,
+    		"created_at": 1623912171
+    	},
+    	{
+    		"name": "Reebok Men Shoe",
+    		"description": "Reebok Sneakers",
+    		"category_id": 4,
+    		"inventory_id": 4,
+    		"price": 20100.0,
+    		"created_at": 1623912171
+    	},
+    	{
+    		"name": "Adidas Men Shoe",
+    		"description": "Adidas men bravatta",
+    		"category_id": 5,
+    		"inventory_id": 5,
+    		"price": 2000.0,
+    		"created_at": 1623912171
+    	},
+    	{
+    		"name": "Nike Men Shoe",
+    		"description": "nike men bravatta",
+    		"category_id": 6,
+    		"inventory_id": 6,
+    		"price": 2000.0,
+    		"created_at": 1623912171
+    	},
+    	{
+    		"name": "Puma Men Shoe",
+    		"description": "puma men bravatta",
+    		"category_id": 7,
+    		"inventory_id": 7,
+    		"price": 2000.0,
+    		"created_at": 1623912171
+    	},
+    	{
+    		"name": "Reebok Men Shoe",
+    		"description": "Reebok Sneakers",
+    		"category_id": 8,
+    		"inventory_id": 8,
+    		"price": 20100.0,
+    		"created_at": 1623912171
+    	}
+    ]
+	
