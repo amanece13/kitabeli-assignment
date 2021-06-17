@@ -1,11 +1,6 @@
 package com.kitabeli.application.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-
+import lombok.*;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -16,13 +11,15 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class Deal {
 
+    private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_id", referencedColumnName = "id")
+    @ToString.Exclude
     private Product product;
 
     @Column(name = "name")
@@ -32,16 +29,21 @@ public class Deal {
     private String description;
 
     @Column(name = "discount")
-    private Double discount;
+    private Integer discount;
 
     @Column(name = "start_time")
-    @CreationTimestamp
     private Timestamp startTime;
 
     @Column(name = "end_time")
     private Timestamp endTime;
 
-    @Column(name = "deleted_at")
-    private Timestamp deleted_at;
-
+    public Deal(Product product, String name, String description, Integer discount, Timestamp startTime, Timestamp
+            endTime) {
+        this.product = product;
+        this.name = name;
+        this.description = description;
+        this.discount = discount;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
 }

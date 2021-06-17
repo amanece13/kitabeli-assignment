@@ -1,6 +1,5 @@
 package com.kitabeli.application.controller;
 
-import com.kitabeli.application.entity.Product;
 import com.kitabeli.application.model.ProductModel;
 import com.kitabeli.application.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,22 +19,26 @@ public class ProductController {
 
     @GetMapping("/products")
     public ResponseEntity<List<ProductModel>> fetchAllProducts(){
+        log.info("Received a request to fetch all the products ");
         return new ResponseEntity(productService.fetchAllProducts(),HttpStatus.OK);
     }
 
     @GetMapping("/product/{id}")
     public ResponseEntity<ProductModel> fetchAProduct(@PathVariable("id") Long id){
+        log.info("Received a request to fetch all product with id {} ", id);
         return new ResponseEntity(productService.findProductById(id),HttpStatus.OK);
     }
-
-    /*@PostMapping("/products")
-    public ResponseEntity addProducts(@RequestBody List<Product> productList){
-
-    }*/
+    @PostMapping("/products")
+    public ResponseEntity addProducts(@RequestBody List<ProductModel> productList){
+        log.info("Received a request to add multiple products");
+        productService.addProducts(productList);
+        return new ResponseEntity(HttpStatus.CREATED);
+    }
 
     @PostMapping("/product")
     public ResponseEntity addProduct(@RequestBody ProductModel productModel){
-            productService.addProduct(productModel);
-        return new ResponseEntity(HttpStatus.OK);
+        log.info("Received a request to add a single product");
+        productService.addProduct(productModel);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 }

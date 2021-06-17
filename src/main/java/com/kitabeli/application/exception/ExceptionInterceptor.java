@@ -12,20 +12,26 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class ExceptionInterceptor extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(InvalidInputException.class)
-    public final ResponseEntity<Object> handleInputFormatExceptions(InvalidInputException ex) {
+    public final ResponseEntity<Object> handleInvalidInputFormatException (InvalidInputException ex) {
         CustomExceptionSchema exceptionResponse =
                 new CustomExceptionSchema(
-                        ex.getTimestamp(), ex.getStatus(), ex.getError(), ex.getMessage(),false);
+                        ex.getTimestamp(), ex.getStatus(), ex.getMessage(),false);
         return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(DataFormatException.class)
-    public final ResponseEntity<Object> handleOrderProcessingExceptions(DataFormatException ex) {
+    public final ResponseEntity<Object> handleDataFormatException (DataFormatException ex) {
         CustomExceptionSchema exceptionResponse =
                 new CustomExceptionSchema(
-                        ex.getTimestamp(), ex.getStatus(), ex.getError(), ex.getMessage(),false);
+                        ex.getTimestamp(), ex.getStatus(), ex.getMessage(),false);
         return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 
-
+    @ExceptionHandler(ProductNotFoundException.class)
+    public final ResponseEntity<Object> handleProductNotFoundException (ProductNotFoundException ex) {
+        CustomExceptionSchema exceptionResponse =
+                new CustomExceptionSchema(
+                        ex.getTimestamp(), ex.getStatus(), ex.getMessage(),false);
+        return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
+    }
 }

@@ -1,13 +1,7 @@
 package com.kitabeli.application.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
+import lombok.*;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -19,8 +13,9 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class Product {
 
+    private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
@@ -30,32 +25,32 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
+    @ToString.Exclude
     private ProductCategory productCategory;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "inventory_id", referencedColumnName = "id")
+    @ToString.Exclude
     private ProductInventory productInventory;
 
     @Column(name = "price")
     private Double price;
 
     @Column(name = "created_at")
-    @CreationTimestamp
     private Timestamp created_at;
 
     @Column(name = "modified_at")
-    @UpdateTimestamp
     private Timestamp modified_at;
 
-    @Column(name = "deleted_at")
-    private Timestamp deleted_at;
-
-    @OneToOne(mappedBy = "product")
-    private Deal deal;
-
-    @OneToOne(mappedBy = "product")
-    private ExpiredDeals expiredDeals;
-
+    public Product(String name, String description, ProductCategory productCategory, ProductInventory productInventory, Double price, Timestamp created_at, Timestamp modified_at) {
+        this.name = name;
+        this.description = description;
+        this.productCategory = productCategory;
+        this.productInventory = productInventory;
+        this.price = price;
+        this.created_at = created_at;
+        this.modified_at = modified_at;
+    }
 }

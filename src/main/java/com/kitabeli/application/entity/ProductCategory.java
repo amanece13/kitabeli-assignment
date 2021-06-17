@@ -1,9 +1,6 @@
 package com.kitabeli.application.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -17,13 +14,15 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class ProductCategory {
 
+    private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
-
+/*
     @OneToOne(mappedBy = "productCategory")
-    private Product product;
+    @ToString.Exclude
+    private Product product;*/
 
     @Column(name = "name")
     private String name;
@@ -32,14 +31,8 @@ public class ProductCategory {
     private String description;
 
     @Column(name = "created_at")
-    @CreationTimestamp
     private Timestamp created_at;
 
     @Column(name = "modified_at")
-    @UpdateTimestamp
     private Timestamp modified_at;
-
-    @Column(name = "deleted_at")
-    private Timestamp deleted_at;
-
 }

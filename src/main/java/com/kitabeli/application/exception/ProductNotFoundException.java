@@ -4,16 +4,17 @@ import lombok.Data;
 import org.springframework.http.HttpStatus;
 
 @Data
-public class CustomExceptionSchema {
+public class ProductNotFoundException extends RuntimeException{
+
     private Long timestamp;
     private HttpStatus status;
     private String message;
-    private boolean success;
+    private Boolean success;
 
-    protected CustomExceptionSchema() {}
+    protected ProductNotFoundException() {}
 
-    public CustomExceptionSchema(Long timestamp, HttpStatus status, String message, Boolean success
-    ) {
+    public ProductNotFoundException(
+            Long timestamp, HttpStatus status, String message, Boolean success) {
         this.timestamp = timestamp;
         this.status = status;
         this.message = message;

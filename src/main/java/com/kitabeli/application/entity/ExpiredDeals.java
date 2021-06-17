@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -16,12 +14,13 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class ExpiredDeals {
 
+    private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
 
@@ -32,16 +31,15 @@ public class ExpiredDeals {
     private String description;
 
     @Column(name = "discount")
-    private Double discount;
+    private Integer discount;
 
     @Column(name = "start_time")
-    @CreationTimestamp
     private Timestamp startTime;
 
     @Column(name = "end_time")
     private Timestamp endTime;
 
     @Column(name = "deleted_at")
-    private Timestamp deleted_at;
+    private Timestamp deletedAt;
 
 }

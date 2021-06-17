@@ -27,21 +27,25 @@ import lombok.NoArgsConstructor;
 public class ProductModel {
     @JsonProperty("id")
     private Long id;
+
     @JsonProperty("name")
     private String name;
+
     @JsonProperty("description")
     private String description;
+
     @JsonProperty("category_id")
     private Long categoryId;
+
     @JsonProperty("inventory_id")
     private Long inventoryId;
+
     @JsonProperty("price")
     private Double price;
+
     @JsonProperty("created_at")
     private Long createdAt;
+
     @JsonProperty("modified_at")
     private Long modifiedAt;
-    @JsonProperty("deleted_at")
-    private Long deletedAt;
-
 }
