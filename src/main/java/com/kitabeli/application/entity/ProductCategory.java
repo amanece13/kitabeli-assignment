@@ -19,10 +19,6 @@ public class ProductCategory {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
-/*
-    @OneToOne(mappedBy = "productCategory")
-    @ToString.Exclude
-    private Product product;*/
 
     @Column(name = "name")
     private String name;
