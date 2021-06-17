@@ -37,8 +37,8 @@ sample json
     {
 		"name": "Reebok Men Shoe",
 		"description": "Reebok Sneakers",
-		"category_id": 4,
-		"inventory_id": 4,
+		"category_id": 10,
+		"inventory_id": 10,
 		"price": 20100.0,
 		"created_at": 1623912171
     } 
@@ -51,66 +51,34 @@ sample json
     [
     	
     	{
-    		"name": "Adidas Men Shoe",
-    		"description": "Adidas men bravatta",
-    		"category_id": 1,
-    		"inventory_id": 1,
+    		"name": "Horlicks",
+    		"description": "Grocery",
+    		"category_id": 9,
+    		"inventory_id": 9,
     		"price": 2000.0,
     		"created_at": 1623912171
     	},
     	{
-    		"name": "Nike Men Shoe",
-    		"description": "nike men bravatta",
-    		"category_id": 2,
-    		"inventory_id": 2,
+    		"name": "Baby soap Men Shoe",
+    		"description": "Baby Products",
+    		"category_id": 12,
+    		"inventory_id": 12,
     		"price": 2000.0,
     		"created_at": 1623912171
     	},
     	{
-    		"name": "Puma Men Shoe",
-    		"description": "puma men bravatta",
-    		"category_id": 3,
-    		"inventory_id": 3,
-    		"price": 2000.0,
-    		"created_at": 1623912171
-    	},
-    	{
-    		"name": "Reebok Men Shoe",
-    		"description": "Reebok Sneakers",
-    		"category_id": 4,
-    		"inventory_id": 4,
-    		"price": 20100.0,
-    		"created_at": 1623912171
-    	},
-    	{
-    		"name": "Adidas Men Shoe",
-    		"description": "Adidas men bravatta",
-    		"category_id": 5,
-    		"inventory_id": 5,
-    		"price": 2000.0,
-    		"created_at": 1623912171
-    	},
-    	{
-    		"name": "Nike Men Shoe",
-    		"description": "nike men bravatta",
-    		"category_id": 6,
-    		"inventory_id": 6,
-    		"price": 2000.0,
-    		"created_at": 1623912171
-    	},
-    	{
-    		"name": "Puma Men Shoe",
-    		"description": "puma men bravatta",
-    		"category_id": 7,
-    		"inventory_id": 7,
+    		"name": "Puma Men's Wear",
+    		"description": "puma men t-shirt",
+    		"category_id":11,
+    		"inventory_id": 11,
     		"price": 2000.0,
     		"created_at": 1623912171
     	},
     	{
     		"name": "Reebok Men Shoe",
     		"description": "Reebok Sneakers",
-    		"category_id": 8,
-    		"inventory_id": 8,
+    		"category_id": 10,
+    		"inventory_id": 10,
     		"price": 20100.0,
     		"created_at": 1623912171
     	}
