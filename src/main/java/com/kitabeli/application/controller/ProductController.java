@@ -12,7 +12,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@CrossOrigin("http://locahost:3000")
+@CrossOrigin(origins = "http://locahost:3000")
 public class ProductController {
 
     @Autowired
