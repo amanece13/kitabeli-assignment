@@ -50,7 +50,6 @@ public class DealsServiceImpl implements DealsService {
     @Override
     public List<DealModel> fetchDeals(String status) {
         if (status.equalsIgnoreCase("active")) {
-//            refreshDeals();
             List<Deal> activeDeals = dealsRepository.findAll();
             return ModelUtil.getDealModelFromDeal(activeDeals);
         } else {
