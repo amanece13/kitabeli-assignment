@@ -1,4 +1,4 @@
-package com.kitabeli.application.impl;
+package com.kitabeli.application.service.impl;
 
 import com.kitabeli.application.config.DealsConfig;
 import com.kitabeli.application.entity.Deal;

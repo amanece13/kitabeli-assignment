@@ -1,4 +1,4 @@
-package com.kitabeli.application.impl;
+package com.kitabeli.application.service.impl;
 
 import com.kitabeli.application.entity.Product;
 import com.kitabeli.application.exception.InvalidInputException;
